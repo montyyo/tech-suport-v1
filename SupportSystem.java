@@ -38,8 +38,8 @@ public class SupportSystem
 
         while(!finished) {
             String espaces = reader.getInput();//variable local
-            String input = espaces.replaceAll(" ","");//aliminacion de espacios en blanco
-         
+            String input = espaces.replaceAll(" ","").toLowerCase();//aliminacion de espacios en blanco
+            
 
             if(input.startsWith("bye")) {
                 finished = true;
