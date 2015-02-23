@@ -41,7 +41,7 @@ public class SupportSystem
             String input = espaces.replaceAll(" ","").toLowerCase();//aliminacion de espacios en blanco y aceptacion de mayusculas
             
 
-            if(input.startsWith("bye")) {
+            if(input.startsWith("bye") || input.equalsIgnoreCase("bye")){
                 finished = true;
             }
             else {
