@@ -37,7 +37,9 @@ public class SupportSystem
         printWelcome();
 
         while(!finished) {
-            String input = reader.getInput();
+            String espaces = reader.getInput();//variable local
+            String input = espaces.replaceAll(" ","");//aliminacion de espacios en blanco
+         
 
             if(input.startsWith("bye")) {
                 finished = true;
