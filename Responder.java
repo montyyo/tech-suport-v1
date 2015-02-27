@@ -1,6 +1,8 @@
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+//cualquier clase que se pueda recorrer con iterador se puede recorer con for-each
 /**
  * The responder class represents a response generator object.
  * It is used to generate an automatic response to an input string.
@@ -40,23 +42,39 @@ public class Responder
      * Generate a response.
      * @return   A string that should be displayed as the response
      */
-    public String generateResponse(String question)
+    public String generateResponse(HashSet<String> question)
     {
         String answer= null;
+        boolean exist=false;
+       
+        String find=null;
+        int cont=0;
         
-        if(answers.containsKey(question) == true)
-        {
+          for(String ans: question)
+          {
+            
+            if(find == null && (answers.containsKey(ans)))
+            {
+                find = answers.get(question);
+                exist=true;
+            }
+          }
+          
+          if(answers.containsKey(question) == true)
+          {
                       
                answer= answers.get(question);        
-            
-        }
-        else
-        {
+               exist=true;
+          }
+          else
+          {
             
             int num = (rnd.nextInt(5));
             answer=(a.get(num));
              
-        }
+          }
+          cont++;
+        
         return answer;
     }
     
