@@ -15,6 +15,7 @@ public class Responder
     private Random rnd;
     private  ArrayList<String> a;
     private HashMap<String,String> answers;
+    private HashSet<String> faq;
     /**
      * Construct a Responder - nothing to do
      */
@@ -36,6 +37,10 @@ public class Responder
        answers.put( "bye" ,  " don´t have nay questions?");
        answers.put( "thank´s" ,  " you are welcome");
        
+       this.faq=new HashSet<>();
+       faq.add("free app");
+       faq.add("problem linux crash");
+       faq.add("coche");
     }
 
     /**
@@ -60,7 +65,7 @@ public class Responder
             }
           }
           
-          if(answers.containsKey(question) == true)
+          if(exist == true)
           {
                       
                answer= answers.get(question);        
@@ -73,7 +78,7 @@ public class Responder
             answer=(a.get(num));
              
           }
-          cont++;
+         
         
         return answer;
     }
