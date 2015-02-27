@@ -30,8 +30,9 @@ public class InputReader
     {
         System.out.print("> ");         // print prompt
         String inputLine = reader.nextLine();
-        
-        
+        String firstword[] =inputLine.split(" ",2); //creamos un array y ejecutamos split sobre el string input
+        String first=firstword[0];//guardamos los datos en un string
+        System.out.println(first);//mostramos el valor de first
         return inputLine;
     }
 }
